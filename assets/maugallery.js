@@ -146,17 +146,20 @@
         });
       }
       let index = 0,
-        next = null;
+      // Changement du "next" en "prev"
+      prev = null;
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      // Calcule l'index précédent
+      index = (index - 1 + imagesCollection.length) % imagesCollection.length;
+      // Sélectionne l'image précédente dans le tableau
+      prev = imagesCollection[index];
+      // Changement du $(next) en  $(prev)
+      $(".lightboxImage").attr("src", $(prev).attr("src"));
     },
     nextImage() {
       let activeImage = null;
@@ -185,14 +188,18 @@
         });
       }
       let index = 0,
-        next = null;
+      next = null;
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      // Calcule l'index Suivant
+      index = (index + 1) % imagesCollection.length;
+      // Sélectionne l'image suivante dans le tableau
+      next = imagesCollection[index];
+      
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
