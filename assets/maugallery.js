@@ -222,7 +222,8 @@
       var tagItems =
         '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
       $.each(tags, function(index, value) {
-        tagItems += `<li class="nav-item active">
+        /* Suppresion de la classe "active" par défaut des tags */
+        tagItems += `<li class="nav-item">
                 <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
@@ -236,26 +237,24 @@
       }
     },
     filterByTag() {
-      if ($(this).hasClass("active-tag")) {
+      if ($(this).hasClass("active active-tag")) {
         return;
       }
+
+      /* Retire la classe active des autres classes */
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+
+      /* Ajout de la classe active */
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
       $(".gallery-item").each(function() {
-        $(this)
-          .parents(".item-column")
-          .hide();
-        if (tag === "all") {
-          $(this)
-            .parents(".item-column")
-            .show(300);
-        } else if ($(this).data("gallery-tag") === tag) {
-          $(this)
-            .parents(".item-column")
-            .show(300);
+        var $parent = $(this).closest(".item-column");
+        $parent.hide();
+
+        if (tag === "all" || $(this).data("gallery-tag") === tag) {
+          $parent.show(300);
         }
       });
     }
