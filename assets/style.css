@@ -77,12 +77,13 @@ body {
 .about-me__title {
 	margin-top: 1em;
 	margin-bottom: 60px;
-	font-size: 30px;
+	font-size: 32px;
 }
 .about-me__introduction {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
+	font-size: 16px; /* 16px pour l'intro */
 	width: 60%;
 }
 #about-me p {
@@ -148,7 +149,7 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
+	font-size: 30px;
 }
 .quote__author {
 	font-family: Spectral;
@@ -305,6 +306,13 @@ input[type="submit"] {
 	}
 
 	#contact .container {
+		flex-direction: column;
+	}
+	/* Centre le formulaire de contact en dessous des 1000px */
+	#contact .form-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
 	}
 	#contact .picture.right {
