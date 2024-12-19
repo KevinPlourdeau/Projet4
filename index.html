@@ -27,34 +27,48 @@
 	
 	<!-- Twitter Cards-->
 	<meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nina Carducci - Photographe Professionnelle">
-    <meta name="twitter:description" content="Découvrez le portfolio de Nina Carducci, spécialisée dans les portraits, mariages et événements professionnels à Bordeaux.">
-    <meta name="twitter:site" content="@NinaCarducciPhoto">
-	
+
 	<!-- Rich Snippets-->
 	<script type="application/ld+json">
 		{
 		  "@context": "https://schema.org",
-		  "@type": "Photographer",
-		  "name": "Nina Carducci",
-		  "description": "Photographe professionnel basé à Bordeaux, spécialisé dans [type de photographie : mariage, portrait, etc.].",
-		  "address": {
-			"@type": "PostalAddress",
-			"streetAddress": "68 avenue Alsace-Lorraine",
-			"addressLocality": "Bordeaux",
-			"postalCode": "33200",
-			"addressCountry": "FR"
-		  },
-		  "telephone": "+33556677889",
-		  "openingHours": "Mo-Fr 10:00-19:00",
-		  "url": "https://kevinplourdeau.github.io/Projet4/",
-		  "sameAs": [
-			"https://www.instagram.com/ninacarducci.photo/?hl=fr"
-		  ],
-		  "image": "https://kevinplourdeau.github.io/Projet4/assets/imageswebp/nina.webp"
+		  "@graph": [
+			{
+				"@type": "WebSite",
+				"url": "https://kevinplourdeau.github.io/Projet4/",
+				"name": "Nina Carducci",
+				"description": "Photographe professionnel basé à Bordeaux, spécialisé dans la photographie de mariage, portrait, évenements ... .",
+				"inLanguage": "fr-FR"
+				"potentialAction": [{ "@type": "ReadAction", "target": ["https://kevinplourdeau.github.io/Projet4/"] }]
+			},
+			{
+				"@type": "ProfessionalService",
+				"currenciesAccepted": "EUR",
+				"openingHours": "Mo-Fr 10:00-19:00",
+				"paymentAccepted": "Cash, Credit Card",
+				"priceRange": "50-400 €",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "68 avenue Alsace-Lorraine" 
+					"addressLocality": "Bordeaux",
+					"postalCode": "33200",
+					"addressCountry": "FR",
+				},
+				"areaServed": { "@type": "AdministrativeArea", "name": ["Île de France", "Bordeaux"] },
+				"legalName": "Nina Carducci",
+				"image": "https://kevinplourdeau.github.io/Projet4/assets/imageswebp/nina.webp"
+				"telephone": "+33556677889",
+				"description": "Photographe professionnel basé à Bordeaux, spécialisé dans la photographie de mariage, portrait, évenements ... .",
+				"name": "Nina Carducci",
+				"url": "https://nina-carducci.github.io/"
+				"sameAs": [
+				"https://www.instagram.com/ninacarducci.photo/?hl=fr"
+			  	],
+			}	  
 		}
-		</script>
+	</script>
 </head>
+
 <body>
 <header class="top-header">
 	<h1 class="name">Nina Carducci</h1>
